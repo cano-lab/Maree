@@ -17,7 +17,7 @@ Marée is a journaling app designed for **contextual capture** and **reflective 
 
 | Tier | Model | When | Status |
 |------|-------|------|--------|
-| **1. On-device** | Llama 3.2 3B / Qwen 2.5 3B | Always available | **MVP** |
+| **1. On-device** | Llama 3.2 3B / Qwen 3.5 2B-4B | Always available | **MVP** |
 | **2. Self-hosted** | Kimi 2.5, GLM-5 @ full precision | Home server reachable | *Future* |
 | **3. Cloud** | OpenAI, Claude | BYO API key | *Optional* |
 
