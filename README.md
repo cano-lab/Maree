@@ -63,7 +63,6 @@ Marée/
 
 - **Markdown native** — Your entries are files you can read anywhere
 - **Opt-in context** — Calendar, location, weather — only if you allow
-- **French-first naming** — Marée, because that's the language of your calm
 - **Reflection, not diagnosis** — AI observes, you decide
 
 ## Getting Started
