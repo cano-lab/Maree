@@ -119,6 +119,34 @@ export function parseMarkdownEntry(content: string, filePath?: string): Entry | 
   };
 }
 
+export async function deleteEntry(entryId: string): Promise<boolean> {
+  await ensureMaréeDir();
+  
+  try {
+    // Find the file with this entry ID
+    const years = await RNFS.readDir(MARÉE_DIR);
+    
+    for (const yearDir of years.filter((d) => d.isDirectory())) {
+      const months = await RNFS.readDir(yearDir.path);
+      
+      for (const monthDir of months.filter((d) => d.isDirectory())) {
+        const files = await RNFS.readDir(monthDir.path);
+        
+        for (const file of files.filter((f) => f.name.endsWith('.md'))) {
+          if (file.name.includes(entryId)) {
+            await RNFS.unlink(file.path);
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    return false;
+  }
+}
+
 export async function listEntries(): Promise<Entry[]> {
   await ensureMaréeDir();
   
